@@ -1,44 +1,17 @@
-let students = ["Ali", "Vali", "Guli"];
+let friends = [];
 
-students.push('Gani');
-console.log(students);
+document.getElementById('add-friend').addEventListener('click', function (e) {
+    e.preventDefault()
 
-students.pop();
-console.log(students);
+    let friend = document.getElementById('friend-input').value
+        friends.push(friend)
 
-students.unshift('Sanjar');
-console.log(students);
+        document.getElementById('friends-list').innerText = friends
 
-students.shift();
-console.log(students);
+    
+})
 
-
-students[1] = 'Sarvar';
-console.log(students);
-
-
-let fIsm = prompt('Ism kiriting:');
-
-
-let togriIsm = fIsm.slice(0, 1).toUpperCase() + fIsm.slice(1).toLowerCase();
-
-
-if (students.includes(togriIsm)) {
-    alert('Ro‘yxatda BOR');
-} else {
-    alert('Ro‘yxatda YO‘Q');
-}
-
-
-
-let raqam = prompt("Biror raqam kiriting:");
-
-if (raqam % 15 === 0) {
-    alert("FizzBuzz");
-} else if (raqam % 5 === 0) {
-    alert("Buzz");
-} else if (raqam % 3 === 0) {
-    alert("Fizz");
-} else {
-    alert(raqam);
-}
+document.getElementById('select-friend').addEventListener('click', function () {
+    let randomNumber = Math.floor(Math.random() * friends.length)
+    document.getElementById('random-friend').innerText = friends[randomNumber];
+})
